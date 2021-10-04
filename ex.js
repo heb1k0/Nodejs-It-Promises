@@ -97,14 +97,15 @@ let getSalario = (employe) =>{
 }
 
 
-getSalario(employees[1]).then( ok => console.log(ok)).catch(err =>console.log(err));
+getSalario(employees[1])
+    .then( ok => console.log(ok))
+    .catch(err =>console.log(err));
 
 // Exercici 3 y ¿ Nivell 3?
 /* Invoqui la primera Promise getEmpleado i posteriorment getSalario, niant l'execució de les dues promises.*/
 
 getEmpleado(1)
-.then( 
-    employe => 
-    getSalario(employe).then(msg => console.log(msg))
-).catch(err => console.log(err))
+    .then( employe => {return getSalario(employe)})
+    .then(msg => console.log(msg))
+    .catch(err => console.log(err))
 
