@@ -105,7 +105,7 @@ getSalario(employees[1])
 /* Invoqui la primera Promise getEmpleado i posteriorment getSalario, niant l'execució de les dues promises.*/
 
 getEmpleado(1)
-    .then( employe => {return getSalario(employe)})
+    .then( employe => { return getSalario(employe) })
     .then(msg => console.log(msg))
     .catch(err => console.log(err))
 
